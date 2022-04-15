@@ -1,0 +1,52 @@
+
+
+
+#$env:FLASK_APP = "application"
+
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}    
+    <form action="/add" method="POST">
+
+        <div class="form-group">
+            <label for="">Dish name</label>
+            <input type="text" autofocus autocomplete="off" name="dish_name">
+            
+        </div>
+
+        <label for="time">Eating time</label>
+        <div class="form-check" id="time">
+            <div>
+                <label for="morning">Morning</label>
+                <input type="checkbox" class="form-check-input" value="morning" id="morning">
+            </div>
+            <div>
+                <label for="noon">Noon</label>
+                <input type="checkbox" class="form-check-input" value="noon" id="noon">
+            </div>
+            <div>
+                <label for="evening">Evening</label>
+                <input type="checkbox" class="form-check-input" value="evening" id="evening">
+            </div>
+        </div> 
+        
+        <label for="ingredients">Ingredients</label>
+        <div class="container">
+            {% for i in ingr %}
+                {{ i }}
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}

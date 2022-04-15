@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block main %}
+    <div class="text-center py-5">
+        <h1>Your dishes</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-10">
+            {% for item in data %}
+                <div class="card bg-dark text-white p-2 mx-auto">
+                    <h3 class="card-header bg-secondary">{{ data[loop.index0]["name"] }}</h3>
+                    <div class="col-md-8">
+                        <h5>Ingredients</h4>
+                        <ul>
+                            {% for ingr, needed in data[loop.index0].items() %}
+                                {% if needed == 1 %}
+                                    <li>{{ ingr }}</li>    
+                                {% endif %}
+                            {% endfor %}
+                        </ul>        
+                    </div>
+                    <div class="col-md-2">
+                        <h5>time</h5>
+                        <ul>
+                            {% for time, apropriate in times[loop.index0].items() %}
+                                {% if apropriate == 1 %}
+                                    <li>{{ time }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul> 
+                    </div>
+                    <div>
+                        <h5>Recipe</h5>
+                        <p>{{ data[loop.index0]["recipe"] }}</p>
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

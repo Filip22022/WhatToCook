@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Logout
+{% endblock %}
+
+{% block main %}    
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form action="/logout" method="POST" class="box">
+                    <h1>Log out</h1>
+                    <p class="text-muted">Do you want to log out?</p>
+                    <input type="submit" value="Yes">
+                    <a class="btn btn-light" href="/" role="button" id="logoutNot">No</a>
+                    {% if get_flashed_messages() %}
+                        <header>
+                            <div class="alert alert-primary border text-center" role="alert">
+                                {{ get_flashed_messages() | join(" ") }}
+                            </div>
+                        </header>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

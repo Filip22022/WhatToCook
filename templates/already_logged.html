@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Already logged
+{% endblock %}
+
+{% block main %}   
+    <div class="container">
+        <div class="box position-absolute top-40 start-50 translate-middle">
+            <h1>You are already logged in</h1>
+            <a class="btn btn-light" href="/logout" role="button" id="loggedButton">Log out</a>
+        </div>
+    </div>
+{% endblock %}

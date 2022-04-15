@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}    
+    
+    <div class="text-center py-5">
+        <h1>Add your dish to the database</h1>
+    </div>
+
+    {% if get_flashed_messages() %}
+        <header>
+            <div class="alert alert-primary border text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        </header>
+    {% endif %}
+
+    <div class="container-fluid">
+        <form action="/add" method="POST">
+            
+            <div class="card mx-auto bg-dark w-50 text-white text-center p-4">
+                <div class="form-group">
+                    <h2><label for="">Dish name</label></h2>
+                    <input type="text" autofocus autocomplete="off" name="dish_name" required>
+                    
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="card mx-auto w-50 bg-dark text-white p-2" id="add">
+                <h2><label for="time">Eating time</label></h2>
+                <div class="form-check" id="time">
+                    <div>
+                        <label for="morning">Morning</label>
+                        <input type="checkbox" name="eating_time" class="form-check-input" value="morning" id="morning">
+                    </div>
+                    <div>
+                        <label for="noon">Noon</label>
+                        <input type="checkbox" name="eating_time" class="form-check-input" value="noon" id="noon">
+                    </div>
+                    <div>
+                        <label for="evening">Evening</label>
+                        <input type="checkbox" name="eating_time" class="form-check-input" value="evening" id="evening">
+                    </div>
+                </div> 
+            </div>
+
+            <hr>
+            
+            <div class="card mx-auto w-50 bg-dark text-white p-2">
+                <h2><label for="ingredients">Ingredients</label></h2>
+                <div class="container">
+                    {% for ingredient in ingr %}
+                        <div>
+                            <label for= "{{ loop.index0 }}">{{ ingredient }}</label>
+                            <input type="checkbox" class="form-check-input" name="ingredient" value= "{{ ingredient }}" id= "{{ loop.index0 }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="card mx-auto bg-dark text-white p-2">
+                <h2><label for="recipe">Recipe</label></h2>
+                <input type="text" autocomplete="off" name="recipe">
+            </div>
+
+            <div class="card mx-auto w-25 bg-dark text-white p-2">
+                <input type="submit" value="Add">
+            </div>
+            
+        </form>
+    </div>
+{% endblock %}
