@@ -2,7 +2,7 @@
  My final Cs50x poject
  
  Website built using python with flask, HTML with bootstrap, and SQLite
-functions: /
+functions: \
  -Registering and logging users \
  -Adding user recipes to database \
  -Filtering database for recipes 
