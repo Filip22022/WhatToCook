@@ -1,10 +1,15 @@
 # WhatToCook
- My final Cs50x poject
- 
- Website built using python with flask, HTML with bootstrap, and SQLite
-functions: \
- -Registering and logging users \
- -Adding user recipes to database \
- -Filtering database for recipes 
 
-This is a website I created as final project for the Cs50x course. It's purpose is to store user's recipes and filter them based on ingredients user marks as avilable in order to suggest a possible dish to cook.
+### Description
+WhatToCook is a working title for my final Cs50x project. It's a website designed to help users remember their food recipes and filter them based on avilable ingredients. It's main purpose is to enable users to easily see what they can cook from what they have on hand, choosing from their own recipes.
+ 
+ ### Languages and frameworks
+ - python
+ - flask
+ - HTML
+ - SQLite
+ 
+ ### Functions
+ - Registering and logging users
+ - Adding user recipes to database
+ - Filtering database for recipes
